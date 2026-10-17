@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Fighter Game</title>
+</head>
+<body>
+
+<h1>MY FIGHTER GAME</h1>
+
+<h2 id="enemyHP">Enemy HP: 100</h2>
+
+<button onclick="attack()">ATTACK</button>
+
+<script>
+let enemyHP = 100;
+
+function attack() {
+    enemyHP -= 10;
+
+    if(enemyHP < 0){
+        enemyHP = 0;
+    }
+
+    document.getElementById("enemyHP").innerText =
+        "Enemy HP: " + enemyHP;
+
+    if(enemyHP === 0){
+        alert("You Win!");
+        enemyHP = 100;
+
+        document.getElementById("enemyHP").innerText =
+            "Enemy HP: 100";
+    }
+}
+</script>
+
+</body>
+</html>
